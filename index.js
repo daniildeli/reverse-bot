@@ -11,15 +11,7 @@ const options = {
 const bot = new TelegramBot(token, options);
 bot.setWebHook(`${url}/bot${token}`);
 
-bot.onText(/\/start/, (msg) => {
-  const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'Привет! Отправь мне любое сообщение и я перепишу его в обратном порядке.')
-});
-
 bot.on('message', (msg) => {
-  if (msg.text !== /\/start/) {
-    const chatId = msg.chat.id;
-    const reversed = msg.text.split('').reverse().join('');
-    bot.sendMessage(chatId, reversed);
-  }
+  const response = msg.text === /\/start/ ? 'Привет! Отправь мне любое сообщение и я перепишу его в обратном порядке.' : msg.text.split('').reverse().join('');
+  bot.sendMessage(chatId, response);
 });
