@@ -17,8 +17,9 @@ bot.onText(/\/start/, (msg) => {
 });
 
 bot.on('message', (msg) => {
-  if (msg.text === /\/start/) { return }
-  const chatId = msg.chat.id;
-  const reversed = msg.text.split('').reverse().join('');
-  bot.sendMessage(chatId, reversed);
+  if (msg.text !== /\/start/) {
+    const chatId = msg.chat.id;
+    const reversed = msg.text.split('').reverse().join('');
+    bot.sendMessage(chatId, reversed);
+  }
 });
