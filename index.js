@@ -13,6 +13,6 @@ bot.setWebHook(`${url}/bot${token}`);
 
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-  const reverted = msg.text.split('').revert().join('')
-  bot.sendMessage(chatId, 'reverted')
+  const reverted = msg.text.split('').reverse().join('');
+  bot.sendMessage(chatId, reverted);
 });
