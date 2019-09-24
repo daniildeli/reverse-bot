@@ -14,5 +14,5 @@ bot.setWebHook(`${url}/bot${token}`);
 bot.onText(/\/curse/, (msg, match) => {
   const chatId = msg.chat.id;
   const reverted = msg.text.split('').revert().join('')
-  bot.sendMessage(chatId, reverted)
+  bot.sendMessage(chatId, 'reverted')
 });
