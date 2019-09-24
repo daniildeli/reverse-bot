@@ -11,7 +11,7 @@ const options = {
 const bot = new TelegramBot(token, options);
 bot.setWebHook(`${url}/bot${token}`);
 
-bot.onText(/\/curse/, (msg, match) => {
+bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   const reverted = msg.text.split('').revert().join('')
   bot.sendMessage(chatId, 'reverted')
