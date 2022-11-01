@@ -1,6 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '801389212:AAE9vpkNalGg3QJx2HdK6W1RzWr9ZqzQNjw';
+const token = process.env.BOT_TOKEN;
+
+if (!token) {
+  throw new Error('Please provide a correct bot token');
+}
+
 const url = process.env.APP_URL || 'https://reverse-text-bot.herokuapp.com:443';
 const options = {
   webHook: {
