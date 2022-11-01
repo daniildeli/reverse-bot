@@ -6,7 +6,7 @@ if (!token) {
   throw new Error('Please provide a correct bot token');
 }
 
-const url = process.env.APP_URL || 'https://reverse-text-bot.herokuapp.com:443';
+const url = process.env.APP_URL;
 const options = {
   webHook: {
     port: process.env.PORT,
