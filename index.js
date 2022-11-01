@@ -18,6 +18,6 @@ bot.setWebHook(`${url}/bot${token}`);
 
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-  const response = msg.text === '/start' ? `Привет, ${msg.from.first_name}! Отправь мне любое сообщение и я перепишу его в обратном порядке.` : msg.text.split('').reverse().join('');
+  const response = msg.text === '/start' ? `Hi, ${msg.from.first_name}! Send me any message and I will rewrite it in reverse order.` : msg.text.split('').reverse().join('');
   bot.sendMessage(chatId, response);
 });
